@@ -26,6 +26,7 @@ class ImageUpload extends React.Component {
     this.setState({
       base64Data: btoa(binaryString)
     });
+    console.log(this.base64Data);
   };
 
   render() {
