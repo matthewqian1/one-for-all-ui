@@ -1,20 +1,17 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import Sidebar from "./Sidebar"
-import SearchBar from "./SearchBar"
 
 export default function Navbar() {
-  return (
-    <nav className="nav">
-      <Link to="/home" className="site-title">
-        One For All
-      </Link>
-      <SearchBar></SearchBar>
-      <ul>
-        <CustomLink to="/pricing">Pricing</CustomLink>
-        <CustomLink to="/about">About</CustomLink>
-      </ul>
-    </nav>
-  )
+  return <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search"/>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
 }
 
 function CustomLink({ to, children, ...props }) {
