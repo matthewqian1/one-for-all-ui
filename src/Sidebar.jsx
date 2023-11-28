@@ -11,7 +11,7 @@ function Sidebar() {
         document.getElementById("sidebarTrigger").style.marginLeft = "250px";
     }
 
-  return <div><div id="mySidebar" class="sidebar">
+  return <div><div id="mySidebar" className="sidebar">
   <a className="closebtn" onClick={closeNav}>X</a>
   <a >About</a>
   <a >Services</a>

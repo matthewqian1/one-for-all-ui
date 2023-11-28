@@ -1,4 +1,6 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import Sidebar from "./Sidebar"
+import SearchBar from "./SearchBar"
 
 export default function Navbar() {
   return (
@@ -6,6 +8,7 @@ export default function Navbar() {
       <Link to="/home" className="site-title">
         One For All
       </Link>
+      <SearchBar></SearchBar>
       <ul>
         <CustomLink to="/pricing">Pricing</CustomLink>
         <CustomLink to="/about">About</CustomLink>
