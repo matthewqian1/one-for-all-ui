@@ -1,5 +1,5 @@
 import Navbar from "./NavBar";
-import Pricing from "./pages/Pricing"
+import AddProduct from "./pages/AddProduct"
 import { Route, Routes } from "react-router-dom"
 import ImageUpload from "./ImageUpload";
 import Login from "./pages/Login";
@@ -11,8 +11,8 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<Pricing />} />
+          <Route path="/addProduct" element={<AddProduct />} />
+          <Route path="/about" element={<AddProduct />} />
           <Route path="/home" element={<Home />}/>
         </Routes>
       </div>
