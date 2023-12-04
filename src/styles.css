@@ -54,6 +54,7 @@
 
   .itemCard {
     display: block;
+    border-style: solid;
   }
 
   .itemCard img {

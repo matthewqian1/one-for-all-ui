@@ -55,6 +55,8 @@ export default function AddProduct() {
       /><br/>
       <label>Category:</label><br/>
       <select 
+      defaultValue={"CLOTHING"}
+      value={category}
       onChange={(e) => setCategory(e.target.value)}
       required
       >
