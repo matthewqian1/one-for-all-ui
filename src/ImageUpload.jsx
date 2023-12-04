@@ -9,7 +9,6 @@ class ImageUpload extends React.Component {
   }
 
   onChange = e => {
-    debugger;
     console.log("file uploaded: ", e.target.files[0]);
     let file = e.target.files[0];
 
