@@ -24,7 +24,7 @@ class ItemCard extends React.Component {
         const { base64Data, description, name, id, clicked } = this.state;
         return <div className="itemCard" onClick={this.handleClick}>
             {clicked && (
-          <Navigate to="/addProduct" replace={true} />
+          <Navigate to="/listing" replace={true} />
         )}
             <h1>{name}</h1>
             <img src={`data:image;base64,${base64Data}`} />

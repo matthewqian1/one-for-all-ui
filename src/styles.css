@@ -204,3 +204,38 @@
       border: 1px solid #ccc;  
     }
   }
+
+  .listing {
+    display: flex;
+    margin: auto;
+  }
+
+  .listing selection {
+    color: red;
+    padding-left: 5%;
+  }
+
+  .sizeButton {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
+    border-color: rgb(192, 177, 177);
+    margin-left: 2%;
+  }
+
+  .sizeButton:hover {
+    border-color: black;
+  }
+
+  .addToCartButton {
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    background-color: green;
+  }
+
+  .addToCartButton:hover {
+    color: green;
+    background-color: white;
+  }
