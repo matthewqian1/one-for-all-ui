@@ -187,6 +187,22 @@
   .topnav .search-container button:hover {
     background: #ccc;
   }
+
+  .topnav .cart button{
+    float: right;
+    display: block;
+    border: none;
+  }
+
+  .topnav .cart button:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav .cart button.active {
+    background-color: #2196F3;
+    color: white;
+  }
   
   @media screen and (max-width: 600px) {
     .topnav .search-container {

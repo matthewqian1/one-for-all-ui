@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import Sidebar from '../Sidebar';
+import { Nav } from 'react-bootstrap';
+import Navbar from '../NavBar';
 
 export default function Listing() {
     
@@ -9,8 +12,11 @@ export default function Listing() {
     let sizes = ['S', 'M', 'L'];
 
     const [size, setSize] = useState('S');
-    return <div className='listing'>
-        <div>
+    return <div>
+        <Sidebar></Sidebar>
+        <Navbar></Navbar>
+        <div className='listing'>
+        <div style={{padding: "5%"}}>
         <img src={`data:image;base64,${base64Data}`} />
         </div>
         
@@ -26,6 +32,7 @@ export default function Listing() {
             <button className='button addToCartButton'>Add To Cart</button>
         </selection>
 
+    </div>
     </div>
     
   }
