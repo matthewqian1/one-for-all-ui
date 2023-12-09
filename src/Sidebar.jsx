@@ -19,7 +19,7 @@ function Sidebar() {
   <a >Contact</a>
 </div>
 <div id="sidebarTrigger">
-  <button class="openbtn" onClick={openNav}>☰ Open Sidebar</button>  
+  <button class="openbtn" onClick={openNav}>☰</button>  
 </div>
 </div>
 }

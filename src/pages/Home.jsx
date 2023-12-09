@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { properties } from "../properties";
 
-export default function Home() {
+export default function Home({cart}) {
+    console.log(cart);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -37,10 +38,10 @@ export default function Home() {
 
     return <div>
         <Sidebar></Sidebar>
-        <Navbar></Navbar>
+        <Navbar cart={cart}></Navbar>
         <div className="itemCardArray">
             {products.map((product) => (
-                <ItemCard data={{image: product.image, description: product.description, name: product.name}}/>
+                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart}}/>
             ))}
         </div>
         <button onClick={addProduct}>Add product</button>
