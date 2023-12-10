@@ -1,6 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import img from './images/cart.jpg'
-import Cart from "./Cart";
 import { useState } from "react";
 
 export default function Navbar({cart}) {
@@ -13,7 +12,7 @@ export default function Navbar({cart}) {
   }
 
   return <div class="topnav">
-  <a class="active" href="/home">Home</a>
+  <a class="active" href="/">Home</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
   <div className="cart" onClick={toggleCart}>
@@ -25,9 +24,20 @@ export default function Navbar({cart}) {
 
 <div class="modal-content">
   <button class="close" onClick={toggleCart}>&times;</button>
-  {cart.map(() => {
-    return <li>item</li>
+  {cart.map((item) => {
+    return <div className="cartItem">
+      <img src={`data:image;base64,${item.image}`} />
+      <div className="cartItemDetails">
+        {item.name}
+      </div>
+      <div className="cartItemPrice">
+        {item.price}
+      </div>
+    </div>
   })}
+    <div className="cartTotalPrice">
+    Total - ${cart.reduce((n, {price}) => n + parseFloat(price), 0)}
+  </div>
 </div>
 
 </div>}

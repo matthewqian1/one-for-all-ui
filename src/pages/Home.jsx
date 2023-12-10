@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 import { properties } from "../properties";
 
 export default function Home({cart}) {
-    console.log(cart);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -41,7 +40,7 @@ export default function Home({cart}) {
         <Navbar cart={cart}></Navbar>
         <div className="itemCardArray">
             {products.map((product) => (
-                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart}}/>
+                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart, id: product.id}}/>
             ))}
         </div>
         <button onClick={addProduct}>Add product</button>

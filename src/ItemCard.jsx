@@ -17,15 +17,15 @@ class ItemCard extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log("hello");
         this.setState({clicked: true});
       }
 
     render() {
         const { base64Data, description, name, id, clicked, cart } = this.state;
+        console.log(id);
         return <div className="itemCard" onClick={this.handleClick}>
             {clicked && (
-          <Navigate to="/listing" replace={true} state={{cart: cart}}/>
+          <Navigate to="/listing" replace={true} state={{cart: cart, id: id}}/>
         )}
             <h1>{name}</h1>
             <img src={`data:image;base64,${base64Data}`} />

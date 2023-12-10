@@ -12,7 +12,6 @@ function App() {
           <Route path="/" element={<Home cart={[]}/>} />
           <Route path="/addProduct" element={<AddProduct />} />
           <Route path="/about" element={<AddProduct />} />
-          <Route path="/home" element={<Home />}/>
           <Route path="/listing" element={<Listing />}/>
         </Routes>
       </div>
