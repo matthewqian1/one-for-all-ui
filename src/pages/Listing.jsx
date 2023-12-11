@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import Sidebar from '../Sidebar';
-import { Nav } from 'react-bootstrap';
 import Navbar from '../NavBar';
 import { useEffect } from 'react';
 import { properties } from "../properties";

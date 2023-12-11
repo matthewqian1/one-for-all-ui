@@ -1,8 +1,8 @@
 import AddProduct from "./pages/AddProduct"
 import { Route, Routes } from "react-router-dom"
-import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Listing from "./pages/Listing";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path="/addProduct" element={<AddProduct />} />
           <Route path="/about" element={<AddProduct />} />
           <Route path="/listing" element={<Listing />}/>
+          <Route path="/checkout" element={<Checkout />}/>
         </Routes>
       </div>
       

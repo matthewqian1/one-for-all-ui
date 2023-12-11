@@ -1,14 +1,21 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import img from './images/cart.jpg'
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar({cart}) {
 
   const [showCart, setShowCart] = useState(false);
+  const navigate = useNavigate();
 
   const toggleCart = (e) => {
     e.preventDefault();
     setShowCart(!showCart);
+  }
+
+  const toCheckout = (e) => {
+    e.preventDefault();
+    navigate("/checkout", {state:{cart: cart}});
   }
 
   return <div class="topnav">
@@ -38,6 +45,9 @@ export default function Navbar({cart}) {
     <div className="cartTotalPrice">
     Total - ${cart.reduce((n, {price}) => n + parseFloat(price), 0)}
   </div>
+  <br/>
+  <br/>
+  <button onClick={toCheckout}>Proceed to checkout</button>
 </div>
 
 </div>}
