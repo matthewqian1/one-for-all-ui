@@ -2,6 +2,9 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import img from './images/cart.jpg'
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { createStore } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' 
 
 export default function Navbar({cart}) {
 

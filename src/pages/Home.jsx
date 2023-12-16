@@ -2,7 +2,6 @@
 import ItemCard from "../ItemCard";
 import Navbar from "../NavBar";
 import Sidebar from "../Sidebar";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { properties } from "../properties";
 
@@ -28,21 +27,13 @@ export default function Home({cart}) {
       }
     , []);
 
-    const navigate = useNavigate();
-
-    const addProduct = (event) => {
-        event.preventDefault();
-        navigate("/addProduct");
-    }
-
     return <div>
         <Sidebar></Sidebar>
         <Navbar cart={cart}></Navbar>
         <div className="itemCardArray">
             {products.map((product) => (
-                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart, id: product.id}}/>
+                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart, id: product.id, price: product.price}}/>
             ))}
         </div>
-        <button onClick={addProduct}>Add product</button>
         </div>
   }

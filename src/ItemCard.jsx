@@ -6,10 +6,10 @@ class ItemCard extends React.Component {
         super(props);
         this.state = {
             base64Data: props.data.image,
-            description: props.data.description,
             name: props.data.name,
             id: props.data.id,
             cart: props.data.cart,
+            price: props.data.price,
             clicked: false
           };
           this.handleClick = this.handleClick.bind(this);
@@ -21,15 +21,14 @@ class ItemCard extends React.Component {
       }
 
     render() {
-        const { base64Data, description, name, id, clicked, cart } = this.state;
-        console.log(id);
+        const { base64Data, name, id, clicked, cart, price } = this.state;
         return <div className="itemCard" onClick={this.handleClick}>
             {clicked && (
           <Navigate to="/listing" replace={true} state={{cart: cart, id: id}}/>
         )}
-            <h1>{name}</h1>
             <img src={`data:image;base64,${base64Data}`} />
-            <p>{description}</p>
+            <h1>{name}</h1>
+            <p>${price}</p>
             <span className="fa fa-star checked"></span>
 <span className="fa fa-star checked"></span>
 <span className="fa fa-star checked"></span>

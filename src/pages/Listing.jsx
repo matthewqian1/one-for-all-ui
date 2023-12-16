@@ -20,6 +20,7 @@ export default function Listing() {
         e.preventDefault();
         const newCart = myCart.concat({image, name, id, price});
         setMyCart(newCart);
+        window.localStorage.setItem("cart", JSON.stringify(newCart));
     }
 
     useEffect(() => {

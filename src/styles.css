@@ -54,7 +54,6 @@
 
   .itemCard {
     display: block;
-    border-style: solid;
   }
 
   .itemCard img {
@@ -63,8 +62,17 @@
     padding: 60px;
   }
 
+  .itemCard h1 {
+    font-size: 15px;
+  }
+
+  .itemCard p {
+    font-size: 18px;
+  }
+
   .itemCardArray {
     display:flex;
+    padding: 2%;
     flex-wrap: wrap;
   }
 
@@ -300,6 +308,9 @@
 
 .cartItem {
   display: flex;
+  width: 300px;
+  height: 300px;
+  padding: 60px;
 }
 
 .cartItemDetails {
