@@ -1,14 +1,37 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+
 import img from './images/cart.jpg'
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { createStore } from 'redux'
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' 
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import getCart from "./helper.jsx";
+import { properties } from "./properties";
 
-export default function Navbar({cart}) {
+export default function Navbar() {
 
+  var cart = getCart();
+  const [cartImages, setCartImages] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  useEffect(() => {
+    cart = getCart();
+    var ids = [];
+    cart.forEach(cartItem => {
+      ids.push(cartItem.id);
+    })
+
+      fetch(`${properties.BASE_URL}/product/getImages?`+ new URLSearchParams({
+        ids: ids
+    }) , {
+        method: 'GET',
+        headers: { "Content-Type": "application/json"}
+      })
+      .then(res => res.json()) 
+      .then(json => {
+        setCartImages(json);
+      }
+    
+    )
+    
+}, [showCart]);
+
   const navigate = useNavigate();
 
   const toggleCart = (e) => {
@@ -34,9 +57,10 @@ export default function Navbar({cart}) {
 
 <div class="modal-content">
   <button class="close" onClick={toggleCart}>&times;</button>
-  {cart.map((item) => {
+
+  {cart.map((item, idx) => {
     return <div className="cartItem">
-      <img src={`data:image;base64,${item.image}`} />
+      <img src={`data:image;base64,${cartImages[idx]}`} />
       <div className="cartItemDetails">
         {item.name}
       </div>

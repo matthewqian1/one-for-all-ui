@@ -4,12 +4,13 @@ import Sidebar from '../Sidebar';
 import Navbar from '../NavBar';
 import { useEffect } from 'react';
 import { properties } from "../properties";
+import getCart from '../helper';
 
 export default function Listing() {
     const { state }  = useLocation();
-    const { cart, id } = state;
+    const { id } = state;
     
-    const [myCart, setMyCart] = useState(cart);
+    const myCart = getCart();
     const [image, setImage] = useState('');
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -18,9 +19,8 @@ export default function Listing() {
 
     const addToCart = (e) => {
         e.preventDefault();
-        const newCart = myCart.concat({image, name, id, price});
-        setMyCart(newCart);
-        window.localStorage.setItem("cart", JSON.stringify(newCart));
+        const newCart = myCart.concat({name, id, price});
+        window.sessionStorage.setItem("cart", JSON.stringify(newCart));
     }
 
     useEffect(() => {

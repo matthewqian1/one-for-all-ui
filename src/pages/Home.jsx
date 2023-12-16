@@ -5,7 +5,7 @@ import Sidebar from "../Sidebar";
 import { useState, useEffect } from "react";
 import { properties } from "../properties";
 
-export default function Home({cart}) {
+export default function Home() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -22,17 +22,16 @@ export default function Home({cart}) {
                 list.push(obj);
             }
             setProducts(list);
-            console.log(list);
         })
       }
     , []);
 
     return <div>
         <Sidebar></Sidebar>
-        <Navbar cart={cart}></Navbar>
+        <Navbar></Navbar>
         <div className="itemCardArray">
             {products.map((product) => (
-                <ItemCard data={{image: product.image, description: product.description, name: product.name, cart: cart, id: product.id, price: product.price}}/>
+                <ItemCard data={{image: product.image, description: product.description, name: product.name, id: product.id, price: product.price}}/>
             ))}
         </div>
         </div>
