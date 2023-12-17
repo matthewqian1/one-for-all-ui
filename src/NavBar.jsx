@@ -46,8 +46,6 @@ export default function Navbar() {
 
   return <div class="topnav">
   <a class="active" href="/">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
   <div className="cart" onClick={toggleCart}>
     <button> 
       <img src={img} width={50}></img>

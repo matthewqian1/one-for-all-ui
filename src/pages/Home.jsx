@@ -7,6 +7,9 @@ import { properties } from "../properties";
 
 export default function Home() {
     const [products, setProducts] = useState([]);
+    const [priceFilter, setPriceFilter] = useState(0);
+    const [allCategories, setAllCategories] = useState([]);
+    const [categoryFilter, setCategoryFilter] = useState(new Set());
 
     useEffect(() => {
         fetch(`${properties.BASE_URL}/product/all` , {
@@ -23,16 +26,88 @@ export default function Home() {
             }
             setProducts(list);
         })
+
+        fetch(`${properties.BASE_URL}/product/getCategories` , {
+            method: 'GET',
+            headers: { "Content-Type": "application/json"}
+          })
+          .then(res => res.json()) 
+          .then(json => {
+              let list = [];
+              for(let i = 0; i < json.length; i++) {
+                  let obj = json[i];
+              
+                  list.push(obj);
+              }
+              setAllCategories(list);
+          })
       }
     , []);
 
+    const addPriceFilter = (e) => {
+        setPriceFilter(e.target.value);
+    }
+
+    const editCategoryFilter = (e) => {
+        if (e.target.checked) {
+            setCategoryFilter(new Set([...categoryFilter, e.target.value]));
+        } else {
+            setCategoryFilter(new Set([...categoryFilter].filter(x => x !== e.target.value)))
+        }
+    }
+
+    var filteredList = products.filter(product => parseInt(priceFilter) === 0 || product.price <= parseInt(priceFilter))
+    .filter(product => categoryFilter.has(product.category));
+    console.log(filteredList);
     return <div>
         <Sidebar></Sidebar>
         <Navbar></Navbar>
-        <div className="itemCardArray">
-            {products.map((product) => (
-                <ItemCard data={{image: product.image, description: product.description, name: product.name, id: product.id, price: product.price}}/>
-            ))}
+        <div className="itemsPage">
+            <div className="filterBar">
+                <div className="filter">
+                    <h1>Price</h1>
+                    <form onChange={addPriceFilter}>
+                        <input type="radio" name="price" value={0}/>
+                        <label> Any</label><br/>
+                        <input type="radio" name="price" value={50}/>
+                        <label> $50 and under</label><br/>
+                        <input type="radio" name="price" value={100}/>
+                        <label> $100 and under</label><br/>
+                        <input type="radio" name="price" value={150}/>
+                        <label> $150 and under</label><br/>
+                    </form>
+                </div>
+                <div className="filter">
+                    <h1>Category</h1>
+                    <form onChange={editCategoryFilter}>
+                        {allCategories.map
+                            ((category) => {
+                                return <>
+                                <input type="checkbox" value={category}/>
+                                <label> {category}s</label><br/>
+                                </>
+                                }
+                            )
+                        }
+                    </form>
+                </div>
+            </div>
+            <div className="itemCardArray">
+                {products
+                .filter(product => parseInt(priceFilter) === 0 || product.price <= parseInt(priceFilter))
+                .filter(product => categoryFilter.size === 0 || categoryFilter.has(product.category))
+                .map((product) => 
+                    (
+                    <ItemCard key={product.id} data={{
+                        image: product.image, 
+                        description: product.description, 
+                        name: product.name, 
+                        id: product.id, price: 
+                        product.price
+                    }}/>
+                    
+                ))}
+            </div>
         </div>
         </div>
   }
