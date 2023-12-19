@@ -263,42 +263,93 @@
   }
 
   .listing {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
-    margin: auto;
   }
 
   .listing selection {
-    color: red;
-    padding-left: 5%;
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
   }
+
+  .listing selection p {
+    margin-top: 0px;
+    margin-left: 0px;
+    float: left;
+  }
+
+  .listing selection h3 {
+    margin-top: 5px;
+    margin-left: 0px;
+    float: left;
+  }
+
+  .listing selection h1 {
+    float: left;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
 
   .listing img {
-    width: 300px;
-    height: 300px;
+    margin-top: 50px;
+    margin-left: 300px;
+    position:relative;
+    width: 600px;
+    height: 600px;
   }
 
+  .listing content {
+    display: block;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: 50px;
+  }
+
+
+  .listing content h1 {
+    font-size: x-large;
+  }
+
+  .listing content li {
+    margin-bottom: 5px;
+  }
+
+
   .sizeButton {
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 70px;
+    height: 40px;
+    font-size: large;
     background-color: white;
     border-color: rgb(192, 177, 177);
-    margin-left: 2%;
+    margin-right: 10px;
+    float: left;
   }
 
   .sizeButton:hover {
     border-color: black;
   }
 
+  .listing hr{
+    margin-left: 50px;
+  }
+
   .addToCartButton {
-    margin-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 400px;
+    font-weight: bolder;
+    font-size: x-large;
     color: white;
-    background-color: green;
+    float: left;
+    background-color: rgb(15, 175, 108);
   }
 
   .addToCartButton:hover {
-    color: green;
+    color: rgb(15, 175, 108);
     background-color: white;
   }
 
