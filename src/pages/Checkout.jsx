@@ -33,17 +33,47 @@ export default function Checkout() {
   });
     return <div>
         <Sidebar></Sidebar>
-        <Navbar cart={cart}></Navbar>
-        {cart.map((item, idx) => {
-    return <div className="cartItem">
-      <img src={`data:image;base64,${cartImages[idx]}`} />
-      <div className="cartItemDetails">
-        {item.name}
-      </div>
-      <div className="cartItemPrice">
-        {item.price}
-      </div>
-    </div>
-  })}
+        <Navbar></Navbar>
+        <div className='orderPage'>
+          <div className='orderForm'>
+            <h1>1. Your Email Address</h1>
+            <label>Email Address *</label><br/>
+            <input type="text"/><br/>
+            <hr></hr>
+
+            <h1>2. Delivery Details</h1>
+            <label>First Name *</label><br/>
+            <input type="text"/><br/>
+            <label>Last Name *</label><br/>
+            <input type="text"/><br/>
+            <label>Country *</label><br/>
+            <input type="text"/><br/>
+
+            <label>Delivery Address *</label><br/>
+            <input type="text"/><br/>
+            <label>Phone Number *</label><br/>
+            <input type="text"/><br/>
+            <hr></hr>
+
+            <h1>1. Payment Details</h1>
+            <label>Email Address *</label><br/>
+            <input type="text"/><br/>
+          </div>
+          <div className='orderSummary'>
+            {cart.map((item, idx) => {
+              return <div className="cartItem">
+                        <img src={`data:image;base64,${cartImages[idx]}`} />
+                        <div className="cartItemDetails">
+                          {item.name}
+                        </div>
+                        <div className="cartItemPrice">
+                          {item.price}
+                        </div>
+                      </div>
+                      }
+                      )
+            }
+          </div>
         </div>
+      </div>
   }

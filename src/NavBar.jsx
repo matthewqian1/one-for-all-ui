@@ -44,6 +44,8 @@ export default function Navbar() {
     navigate("/checkout", {state:{cart: cart}});
   }
 
+  const totalCost = cart.reduce((n, {price}) => n + parseFloat(price), 0);
+
   return <div class="topnav">
   <a class="active" href="/">Home</a>
   <div className="cart" onClick={toggleCart}>
@@ -60,19 +62,26 @@ export default function Navbar() {
     return <div className="cartItem">
       <img src={`data:image;base64,${cartImages[idx]}`} />
       <div className="cartItemDetails">
-        {item.name}
+        {item.name} <br/>
       </div>
       <div className="cartItemPrice">
-        {item.price}
+        ${item.price}
       </div>
     </div>
   })}
     <div className="cartTotalPrice">
-    Total - ${cart.reduce((n, {price}) => n + parseFloat(price), 0)}
+    <header>Subtotal:</header>
+    <value>${totalCost}</value>
+    <br/>
+    <header>Total Discount:</header>
+    <value>- ${0.2 * totalCost}</value>
+    <br/>
+    <header>Order Total:</header>
+    <value>${0.8 * totalCost}</value>
   </div>
   <br/>
   <br/>
-  <button onClick={toCheckout}>Proceed to checkout</button>
+  <button className='button checkoutProceedButton' onClick={toCheckout}>Proceed to checkout</button>
 </div>
 
 </div>}
