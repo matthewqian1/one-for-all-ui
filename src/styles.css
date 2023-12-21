@@ -356,8 +356,7 @@
 
   /* The Modal (background) */
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position:absolute;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -391,21 +390,31 @@
 }
 
 .cartItem {
-  display: flex;
-  width: 300px;
   height: 300px;
-  padding: 60px;
+}
+
+.cartItem img {
+  position: relative;
+  margin-right: 100px;
+  margin-bottom: 50px;
 }
 
 .cartItemDetails {
-  padding-left: 15px;
+  float: right;
+  position: relative;
+  margin-right: 100px;
 }
 
+
 .cartItemPrice {
-  padding-left: 30%;
-  bottom: 0;
+  float: right;
 }
 
 .cartTotalPrice {
   float: right;
+}
+
+.cartItemList {
+  height: 500px;
+  overflow: scroll;
 }

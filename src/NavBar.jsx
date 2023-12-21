@@ -55,9 +55,10 @@ export default function Navbar() {
 
 <div class="modal-content">
   <button class="close" onClick={toggleCart}>&times;</button>
-
+  <div className='cartItemList'>
   {cart.map((item, idx) => {
     return <div className="cartItem">
+
       <img src={`data:image;base64,${cartImages[idx]}`} />
       <div className="cartItemDetails">
         {item.name}
@@ -67,6 +68,7 @@ export default function Navbar() {
       </div>
     </div>
   })}
+  </div>
     <div className="cartTotalPrice">
     Total - ${cart.reduce((n, {price}) => n + parseFloat(price), 0)}
   </div>
