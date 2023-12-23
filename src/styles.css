@@ -57,11 +57,10 @@
   }
 
   .filterBar{
-    height:800px;
     padding: 16px;
     margin-top: 50px;
-    width: 250px;
-    overflow: scroll;
+    position: fixed;
+    width: 300px;
   }
 
   .filter {
@@ -90,8 +89,8 @@
   }
 
   .itemCard img {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     padding: 60px;
   }
 
@@ -104,7 +103,10 @@
   }
 
   .itemCardArray {
+    margin-left: 300px;
+    width: 80%;
     display:flex;
+    justify-content: center;
     padding: 2%;
     flex-wrap: wrap;
   }
@@ -407,6 +409,7 @@
 
 .cartItemPrice {
   margin-left: auto;
+  padding-left: 5%;
 }
 
 .cartTotalPrice {
@@ -441,20 +444,28 @@
 .orderPage {
   display:flex;
   margin-top: 25px;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: left;
   margin-left: 30px;
 }
 
 .orderSummary {
-  width: 450;
-
+  top: 65px;
+  left: 800px;
+  width: 40%;
+  position: fixed;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #fefefe;
+  overflow: scroll;
+  height: 100%;
+  padding-bottom: 5%;
 }
 
 .orderForm {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-left: 20px;
   padding-right: 20px;
+  float: left;
   width: 750px;
   background-color: rgb(243, 239, 239);
 }
@@ -474,4 +485,13 @@
   height: 30px;
   margin-top: 5px;
   margin-bottom: 15px;
+}
+
+.orderForm input[type=submit] {
+  width: 60%;
+  margin-bottom: 2%;
+  font-weight: bolder;
+  font-size: x-large;
+  color: white;
+  background-color: rgb(15, 175, 108);
 }
