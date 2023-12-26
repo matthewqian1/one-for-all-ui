@@ -27,6 +27,7 @@ export default function Home() {
                 list.push(obj);
             }
             setProducts(list);
+            console.log(list);
         })
 
         fetch(`${properties.BASE_URL}/product/getCategories` , {
@@ -81,9 +82,6 @@ export default function Home() {
         }
     }
 
-    var filteredList = products.filter(product => parseInt(priceFilter) === 0 || product.price <= parseInt(priceFilter))
-    .filter(product => categoryFilter.has(product.category));
-    console.log(filteredList);
     return <div>
         <Sidebar></Sidebar>
         <Navbar></Navbar>
@@ -142,10 +140,10 @@ export default function Home() {
                         image: product.image, 
                         description: product.description, 
                         name: product.name, 
-                        id: product.id, price: 
-                        product.price
+                        id: product.id, 
+                        price: product.price,
+                        rating: product.averageRating
                     }}/>
-                    
                 ))}
             </div>
         </div>

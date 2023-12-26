@@ -5,6 +5,7 @@ import Navbar from '../NavBar';
 import { useEffect } from 'react';
 import { properties } from "../properties";
 import getCart from '../helper';
+import Review from '../Review';
 
 export default function Listing() {
     const { state }  = useLocation();
@@ -15,6 +16,7 @@ export default function Listing() {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0.0);
+    const [reviews, setReviews] = useState([]);
     let sizes = ['S', 'M', 'L', 'XL', 'XXL'];
 
     const addToCart = (e) => {
@@ -35,12 +37,11 @@ export default function Listing() {
             setName(json.name);
             setDescription(json.description);
             setPrice(json.price);
+            setReviews(json.reviews);
           })
     }, []);
 
     const [size, setSize] = useState('S');
-
-
     return <div>
             <Sidebar></Sidebar>
             <Navbar cart={myCart}></Navbar>
@@ -59,6 +60,15 @@ export default function Listing() {
             <li>Simple and easy returns.</li>
             <li>We do not offer exchanges, only refunds</li>
             <li>Visit our customer service page for more information or contact our customer service team for further questions.</li>
+        </content>
+        <hr></hr>
+        <content>
+            <h1>Reviews</h1>
+            {reviews.map((review) => {
+                return <Review data = {{
+                    review: review
+                }}/>
+            })}
         </content>
             </div>
                 <selection>
