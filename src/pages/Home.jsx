@@ -1,7 +1,6 @@
 
 import ItemCard from "../ItemCard";
 import Navbar from "../NavBar";
-import Sidebar from "../Sidebar";
 import { useState, useEffect } from "react";
 import { properties } from "../properties";
 
@@ -83,7 +82,6 @@ export default function Home() {
     }
 
     return <div>
-        <Sidebar></Sidebar>
         <Navbar></Navbar>
         <div className="itemsPage">
             <div className="filterBar">

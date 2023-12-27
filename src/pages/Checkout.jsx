@@ -1,7 +1,6 @@
 
 
 import React, { useState } from 'react';
-import Sidebar from '../Sidebar';
 import Navbar from '../NavBar';
 import { useEffect } from 'react';
 import { properties } from "../properties";
@@ -35,7 +34,6 @@ export default function Checkout() {
   const totalCost = cart.reduce((n, {price}) => n + parseFloat(price), 0);
 
     return <div>
-        <Sidebar></Sidebar>
         <Navbar></Navbar>
         <div className='orderPage'>
           <form className='orderForm'>

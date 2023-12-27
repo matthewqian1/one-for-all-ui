@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLocation} from "react-router-dom";
-import Sidebar from '../Sidebar';
 import Navbar from '../NavBar';
 import { useEffect } from 'react';
 import { properties } from "../properties";
@@ -43,7 +42,6 @@ export default function Listing() {
 
     const [size, setSize] = useState('S');
     return <div>
-            <Sidebar></Sidebar>
             <Navbar cart={myCart}></Navbar>
         <div className='listing'>
         <div>
