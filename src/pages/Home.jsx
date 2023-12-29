@@ -3,6 +3,7 @@ import ItemCard from "../ItemCard";
 import Navbar from "../NavBar";
 import { useState, useEffect } from "react";
 import { properties } from "../properties";
+import ChatBot from "../ChatBot";
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -82,6 +83,7 @@ export default function Home() {
     }
 
     return <div>
+        <ChatBot></ChatBot>
         <Navbar></Navbar>
         <div className="itemsPage">
             <div className="filterBar">
