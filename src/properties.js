@@ -1,3 +1,4 @@
 export const properties = {
-    BASE_URL: 'http://localhost:8080'
+    PRODUCT_URL: 'http://localhost:8080',
+    AI_URL: 'http://localhost:8082'
 };

@@ -16,7 +16,7 @@ export default function Checkout() {
         ids.push(cartItem.id);
       })
   
-        fetch(`${properties.BASE_URL}/product/getImages?`+ new URLSearchParams({
+        fetch(`${properties.PRODUCT_URL}/product/getImages?`+ new URLSearchParams({
           ids: ids
       }) , {
           method: 'GET',

@@ -25,7 +25,7 @@ export default function Listing() {
     }
 
     useEffect(() => {
-        fetch(`${properties.BASE_URL}/product/get/${id}` , {
+        fetch(`${properties.PRODUCT_URL}/product/get/${id}` , {
             method: 'GET',
             headers: { "Content-Type": "application/json"}
           })

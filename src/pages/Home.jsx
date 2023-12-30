@@ -14,7 +14,7 @@ export default function Home() {
     const [colourFilter, setColourFilter] = useState(new Set());
 
     useEffect(() => {
-        fetch(`${properties.BASE_URL}/product/all` , {
+        fetch(`${properties.PRODUCT_URL}/product/all` , {
           method: 'GET',
           headers: { "Content-Type": "application/json"}
         })
@@ -30,7 +30,7 @@ export default function Home() {
             console.log(list);
         })
 
-        fetch(`${properties.BASE_URL}/product/getCategories` , {
+        fetch(`${properties.PRODUCT_URL}/product/getCategories` , {
             method: 'GET',
             headers: { "Content-Type": "application/json"}
           })
@@ -45,7 +45,7 @@ export default function Home() {
               setAllCategories(list);
           })
 
-        fetch(`${properties.BASE_URL}/product/getColours` , {
+        fetch(`${properties.PRODUCT_URL}/product/getColours` , {
         method: 'GET',
         headers: { "Content-Type": "application/json"}
         })
