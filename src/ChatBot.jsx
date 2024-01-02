@@ -38,21 +38,22 @@ export default function ChatBot() {
     
     return <div className='chatbot'>
         <div className='chatbox'>
-        <botMsg>Hi! How can I help you</botMsg>
-            {userMsgHistory.map((msg, idx) => {
-                return <>
-                <br></br>
-                <usermsg>{msg}</usermsg>
-                {botMsgHistory.length > idx && <><br></br><botMsg>{botMsgHistory[idx]}</botMsg></>}
-                </>
-            })}
+            <div className='chatboxMessages'>
+            <botMsg>Hi! How can I help you</botMsg>
+                {userMsgHistory.map((msg, idx) => {
+                    return <>
+                    <br></br>
+                    <usermsg>{msg}</usermsg>
+                    {botMsgHistory.length > idx && <><br></br><botMsg>{botMsgHistory[idx]}</botMsg></>}
+                    </>
+                })}
+            </div>
             <form>
                 <div id='usermsg'>
                     <textarea value={currentUserMsg} onKeyDown={change} onChange={(e) => setCurrentUserMsg(e.target.value)}></textarea>
                 </div>
                 
             </form>
-            
         </div>
     <button> 
       <img src={img} width={100}></img>

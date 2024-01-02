@@ -48,8 +48,8 @@ export default function Navbar() {
 
   return <div class="topnav">
   <a class="active" href="/">Home</a>
-  <a class="active" href="/">About</a>
-  <a class="active" href="/">Store</a>
+  <a href="/">About</a>
+  <a href="/store">Store</a>
   <div className="cart" onClick={toggleCart}>
     <button> 
       <img src={img} width={50}></img>
@@ -89,7 +89,7 @@ export default function Navbar() {
 </div>}
   
   <div class="search-container">
-    <form action="/action_page.php">
+    <form>
       <input type="text" placeholder="Search.." name="search"/>
       <button type="submit">Submit</button>
     </form>

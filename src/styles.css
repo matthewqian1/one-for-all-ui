@@ -182,6 +182,7 @@
 
   .topnav {
     overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #e9e9e9;
   }
   
@@ -545,6 +546,11 @@ background-color: #94c8f1;
   float: left;
 }
 
+.chatboxMessages { 
+  overflow: scroll;
+  height: 150px;
+}
+
 .chatbox usermsg {
   padding: 1%;
   border-radius: 60px 60px 60px 60px;
@@ -556,9 +562,128 @@ background-color: #9bf3a7;
 }
 
 .chatbox textarea {
-  
   position: absolute;
   left: 0;
   width: 100%;
   bottom: 0;
 }
+
+.home {
+  justify-content: center;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 70px;
+  font-weight: 600;
+
+  background-image: radial-gradient(#553c9a, #317dee);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+ text-shadow: 1px 1px 1px #317dee,
+             1px 2px 1px #317dee,
+             1px 3px 1px #317dee,
+             1px 4px 1px #317dee,
+             1px 5px 1px #317dee,
+             1px 6px 1px #317dee,
+             1px 10px 5px rgba(16, 16, 16, 0.5),
+             1px 15px 10px rgba(16, 16, 16, 0.4),
+             1px 20px 30px rgba(16, 16, 16, 0.3),
+             1px 25px 50px rgba(16, 16, 16, 0.2);
+  
+}
+
+.home h2 {
+  font-style: italic;
+  
+}
+
+.homeBackground img{
+  width: 50%;
+}
+
+.homeLeftIcon {
+  float: left;
+  padding: 1%;
+}
+
+.homeLeftIcon img{
+  width: 300px;
+  float: left;
+  
+}
+
+.homeRightIcon {
+  padding: 1%;
+}
+
+.homeRightIcon img{
+  width: 300px;
+  float: right;
+  
+}
+
+.glow-on-hover {
+  padding: 15px 25px;
+  top: 500px;
+  left: 45%;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  z-index: 0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #04AA6D;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
