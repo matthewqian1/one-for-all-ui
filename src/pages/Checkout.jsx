@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import Navbar from '../NavBar';
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 import { properties } from "../properties";
 import getCart from '../helper';
 
 export default function Checkout() {
     var cart = getCart();
+    const navigate = useNavigate();
     const [cartImages, setCartImages] = useState([]);
     useEffect(() => {
       cart = getCart();
@@ -32,6 +34,12 @@ export default function Checkout() {
   });
 
   const totalCost = cart.reduce((n, {price}) => n + parseFloat(price), 0);
+
+  const checkout = (e) => {
+    e.preventDefault();
+    alert("Successfully checked out items!");
+    navigate("/store");
+  }
 
     return <div>
         <Navbar></Navbar>
@@ -66,7 +74,7 @@ export default function Checkout() {
             <label>Security Code *</label><br/>
             <input type="text" style={{width: '80px'}} required='true' value={123}/><br/>
             <hr></hr>
-            <input type="submit" value="Place Order"/>
+            <input type="submit" value="Place Order" onClick={checkout}/>
           </form>
           <div className='orderSummary'>
             {cart.map((item, idx) => {

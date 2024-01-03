@@ -687,3 +687,11 @@ background-color: #9bf3a7;
   100% { background-position: 0 0; }
 }
 
+.about {
+  justify-content: center;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  margin-left: 20%;
+  max-width: 1000px ;
+  font-size: 25px;
+}

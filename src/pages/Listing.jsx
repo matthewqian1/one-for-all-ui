@@ -20,6 +20,7 @@ export default function Listing() {
 
     const addToCart = (e) => {
         e.preventDefault();
+        alert(`Item '${name}' has been added to cart! check current cart using the top right icon`)
         const newCart = myCart.concat({name, id, price});
         window.sessionStorage.setItem("cart", JSON.stringify(newCart));
     }
