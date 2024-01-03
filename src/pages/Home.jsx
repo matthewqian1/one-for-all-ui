@@ -1,14 +1,20 @@
 
 import ItemCard from "../ItemCard";
 import Navbar from "../NavBar";
-import { useState, useEffect } from "react";
-import { properties } from "../properties";
+import { useNavigate } from "react-router-dom";
 import background from '../images/simpsons.jpg'
 import gorilla from '../images/gorilla.jpg'
 import koala from '../images/koala.jpg'
 import ChatBot from "../ChatBot";
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
+    const toStore = (e) => {
+        e.preventDefault();
+        navigate("/store");
+    }
 
     return <div className="home">
         <ChatBot></ChatBot>
@@ -23,7 +29,7 @@ export default function Home() {
         </div>
         <h1>One for All</h1>
         <h2>The one stop fashion shop for all</h2>
-        <button class="glow-on-hover" type="button">SHOP NOW</button>
+        <button class="glow-on-hover" type="button" onClick={toStore}>SHOP NOW</button>
         <div className="homeBackground">
             <img src={background}>
             </img>
