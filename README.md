@@ -1,7 +1,8 @@
 ﻿# One For All (E-commerce clothing store)
 
 ## Background
-This is a mock online clothing shop built on a microservice architecture.
+This is the frontend repo for a mock online clothing shop built on a microservice architecture.
+Backend Code Repo - https://github.com/matthewqian1/one-for-all.
 
 Can be viewed here - https://one-for-all-ui-d377592a10bb.herokuapp.com/
 
